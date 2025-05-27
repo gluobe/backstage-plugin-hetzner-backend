@@ -1,0 +1,28 @@
+backend:
+  baseUrl: http://localhost:7007
+  listen:
+    host: 0.0.0.0
+    port: 7007
+  csp:
+    connect-src: ["'self'", 'http:', 'https:']
+  cors:
+    origin: http://localhost:3000
+    methods: [GET, HEAD, PATCH, POST, PUT, DELETE, OPTIONS]
+    credentials: true
+  database:
+    client: pg
+    connection:
+      host: ${POSTGRES_HOST}
+      port: ${POSTGRES_PORT}
+      user: ${POSTGRES_USER}
+      password: ${POSTGRES_PASSWORD}
+  hetzner:
+    token: ${HCLOUD_TOKEN}
+
+catalog:
+  providers:
+    hetzner-provider:
+      token: ${HCLOUD_TOKEN}
+      schedule:
+        frequency: { minutes: 30 }
+        timeout: { minutes: 10 }

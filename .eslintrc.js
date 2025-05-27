@@ -1,0 +1,38 @@
+module.exports = {
+  parserOptions: {
+    ecmaVersion: 2020,
+    sourceType: 'module',
+  },
+  ignorePatterns: ['dist/', 'node_modules/'],
+  rules: {
+    'no-unused-vars': 'off',
+    'quotes': 'off',
+    'comma-dangle': 'off',
+    'spaced-comment': 'off',
+    'eol-last': 'off',
+    'no-eq-null': 'off',
+    'no-trailing-spaces': 'off',
+    'padded-blocks': 'off',
+    'no-nested-ternary': 'off',
+    'camelcase': 'off',
+    'no-var': 'off',
+    'dot-notation': 'off',
+    'no-else-return': 'off',
+    'no-multiple-empty-lines': 'off',
+    'new-cap': 'off',
+    'no-console': 'off',
+    'space-before-function-paren': 'off',
+    'no-null': 'off',
+    'indent': 'off',
+    'eslint-disable-next-line': 'off',
+    'no-useless-constructor': 'off',
+  },
+  extends: ['@spotify/eslint-config-base'],
+  overrides: [
+    {
+      files: ['*.ts', '*.tsx'],
+      parser: '@typescript-eslint/parser',
+      rules: {},
+    },
+  ],
+};
